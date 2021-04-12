@@ -4,3 +4,5 @@
 
 /.vs/MeridianApp/v15
 /MeridianApp/obj/Debug
+/packages
+/.vs
