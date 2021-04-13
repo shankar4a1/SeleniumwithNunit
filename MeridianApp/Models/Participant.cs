@@ -10,6 +10,21 @@ namespace MeridianApp.Models
     {
         public Id _Id { get; set; }
         public PhysicalAddress _PhysicalAddress { get; set; }
+        public PostalAddress _PostalAddress { get; set; }
+        public Contacts _contacts { get; set; }
+        public ExternalSystemsReferences _ExternalSystemsReferences { get; set; }
+        public NOTES _NOTES { get; set; }
+        public BankingDetails _BankingDetails { get; set; }
+        public Conventions _Conventions { get; set; }
+        public BillingPracticeDetails _BillingPracticeDetails { get; set; }
+        public PenaltyGracePeriod _PenaltyGracePeriod { get; set; }
+        public PenaltyGracePeriodforGuarantor _PenaltyGracePeriodforGuarantor { get; set; }
+        public BusinessDayConvention _BusinessDayConvention { get; set; }
+        public IssuerPractices _IssuerPractices { get; set; }
+        public LimitsandRatings _LimitsandRatings { get; set; }
+        public CreditLimit _CreditLimit { get; set; }
+        public CreditRatings _CreditRatings { get; set; }
+        
 
         public partial class Id
         {
@@ -30,24 +45,24 @@ namespace MeridianApp.Models
         }
         public partial class PhysicalAddress
         {
-            public string AddresslLine1 { get; set; }
-            public string AddresslLine2 { get; set; }
-            public string AddresslLine3 { get; set; }
+            public string AddressLine1 { get; set; }
+            public string AddressLine2 { get; set; }
+            public string AddressLine3 { get; set; }
             public string Code { get; set; }
             public string Country { get; set; }
             public string City { get; set; }
         }
         public partial class PostalAddress
         {
-            public string AddresslLine1 { get; set; }
-            public string AddresslLine2 { get; set; }
-            public string AddresslLine3 { get; set; }
+            public string AddressLine1 { get; set; }
+            public string AddressLine2 { get; set; }
+            public string AddressLine3 { get; set; }
             public string Code { get; set; }
             public string Country { get; set; }
             public string City { get; set; }
             public string  WebAddress{ get; set; }
         }
-        public partial class contacts
+        public partial class Contacts
         {
             public string ContactName { get; set; }
             public string ContactTelephoneNumber { get; set; }
