@@ -11,10 +11,10 @@ namespace MeridianApp
 {
     public class DriverExtension
     {
-        private static IWebDriver driver;
+        private  IWebDriver driver;
         private static string browser = ConfigurationManager.AppSettings["browser"];
 
-        public static void Init()
+        public void Init()
         {
 
             var options = new ChromeOptions();
@@ -28,20 +28,20 @@ namespace MeridianApp
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
         }
         
-        public static IWebDriver getDriver
+        public  IWebDriver getDriver
         {
             get { return driver; }
         }
-        public static void SetImplicitTimeout(int seconds=15)
+        public  void SetImplicitTimeout(int seconds=15)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
         }
 
-        public static void Goto(string url)
+        public  void Goto(string url)
         {
             driver.Url = url;
         }
-        public static void Close()
+        public  void Close()
         {
             driver.Quit();
         }

@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using MeridianApp.Pages;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +11,23 @@ namespace MeridianApp.Scenarios
 {
     public class FunctionalTests: TestBase
     {
-        [TestCase(ExpectedResult = "")]
-        public void Login()
+        LoginPage login;
+        IWebDriver driver;
+        [TestCase(ExpectedResult = "",Category="Regression")]
+        public void ApplicationLogin()
         {
             //Load driver and call Url
-            DriverExtension.Goto("");
-            //LoadTestData - Read from Excel
+            driver = new DriverExtension();
+            login = new LoginPage(driver.getDriver);
+            login.openUrl("");
 
-            //Perform Page actions
-            //Assert
+
         }
+        
+        //LoadTestData - Read from Excel
+
+        //Perform Page actions
+        //Assert
+    }
     }
 }
