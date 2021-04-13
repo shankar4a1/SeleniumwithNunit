@@ -11,26 +11,16 @@ namespace MeridianApp.Pages
 {
     public class LoginPage
     {
-        DriverExtension driver;
-        public LoginPage(DriverExtension driver)
+        IWebDriver driver;
+        public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
         }
 
-
-        [FindsBy(How = How.Id, Using = "LOGIN_USER_NAME")]
-        public IWebElement username { get; set; }
-
-        [FindsBy(How = How.Id, Using = "LOGIN_PASSWORD")]
-        public IWebElement password { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//input[@value='Login']")]
-        public IWebElement loginButton { get; set; }
-
-        public void OpenUrl(string url)
-        {
-            driver.Goto(url);
-        }
+        public IWebElement username  => driver.FindElement(By.Id("LOGIN_USER_NAME"));               
+        public IWebElement password => driver.FindElement(By.Id("LOGIN_PASSWORD"));
+        public IWebElement loginButton => driver.FindElement(By.XPath("//input[@value='Login']"));
+               
 
         public void EnterUserNameAndPassword(String usernameValue, String passwordValue)
         {

@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="DriverExtension.cs" />
     <Compile Include="Models\Participant.cs" />
+    <Compile Include="PageExtension.cs" />
     <Compile Include="Pages\AdministationPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />

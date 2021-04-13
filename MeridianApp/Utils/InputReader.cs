@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,8 @@ namespace MeridianApp.Utils
         //
         private void Init()
         {
-            this.workbook = WorkbookFactory.Create(new FileStream(@"..\\..\\Input\\Input.xlsx", FileMode.Open, FileAccess.Read));
+            var inputPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\Input\\Input.xlsx";
+            this.workbook = WorkbookFactory.Create(new FileStream(inputPath, FileMode.Open, FileAccess.Read));
             if (this.workbook != null)
             {
                 this.dataFormatter = new DataFormatter(CultureInfo.InvariantCulture);
